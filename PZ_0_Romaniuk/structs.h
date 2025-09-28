@@ -1,3 +1,6 @@
+#ifndef STRUCTS_H
+#define STRUCTS_H
+
 struct Point 
 {
     double x, y;
@@ -18,3 +21,5 @@ struct Square
     double perimeter;
     double area;
 };
+
+#endif
