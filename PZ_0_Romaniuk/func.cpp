@@ -1,30 +1,57 @@
 #include "structs.h"
 #include "func.h"
+#include <iostream>
+#include <math.h>
 
 void inputPointCoordinates(Point &p)
 {
+    std::cout << "‚¢¥¤¨â¥ ª®®à¤¨­ âë X ¨ “ â®çª¨: ";
+    std::cin >> p.x >> p.y;
 }
 
 void outputPointCoordinates(const Point &p)
 {
+    std::cout << "Š®®à¤¨­ âë â®çª¨: (" << p.x << ", " << p.y << ")" << std::endl;
 }
 
 void readCircle(Circle &c)
 {
+    inputPointCoordinates(c.center);
+    std::cout << "‚¢¥¤¨â¥ à ¤¨ãá ªàã£ : ";
+    std::cin >> c.radius;
 }
 
 void writeCircle(const Circle &c)
 {
+    std::cout << "ˆ”ŽŒ€–ˆŸ Ž ŽŠ“†Ž‘’ˆ" << std::endl;
+    outputPointCoordinates(c.center);
+    std::cout << " ¤¨ãá: " << c.radius << std::endl;
+    std::cout << "„«¨­  ®ªàã¦­®áâ¨: " << lengthCircle(c.radius) << std::endl;
+    std::cout << "«®é ¤ì ®ªàã¦­®áâ¨: " << areaCircle(c.radius) << std::endl;
+    std::cout << "========================" << std::endl;
 }
 
-double lengthCircle(double radius)
+double lengthCircle(double rad)
 {
-    return 0.0;
+    if (rad > 0) {
+        double length = 2 * M_PI * rad;
+        return length;
+    } else {
+        std::cerr << "€„ˆ“‘ „Ž‹†… ›’œ Ž‹œ˜… “‹Ÿ!!! Žƒ€ŒŒ€ €‚’ŽŒ€’ˆ—…‘Šˆ ˆ‡Œ…ˆ‹€ €„ˆ“‘ € 0";
+        return 0;
+    }
+    
 }
 
-double areaCircle(double radius)
+double areaCircle(double rad)
 {
-    return 0.0;
+    if (rad > 0) {
+        double area = M_PI * rad * rad;
+        return area;
+    } else {
+        std::cerr << "€„ˆ“‘ „Ž‹†… ›’œ Ž‹œ˜… “‹Ÿ!!! Žƒ€ŒŒ€ €‚’ŽŒ€’ˆ—…‘Šˆ ˆ‡Œ…ˆ‹€ €„ˆ“‘ € 0";
+        return 0;
+    }
 }
 
 void readSquare(Square &s)

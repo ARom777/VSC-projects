@@ -7,8 +7,8 @@ void outputPointCoordinates(const Point &p);
 
 void readCircle(Circle &c);
 void writeCircle(const Circle &c);
-double lengthCircle(double radius);
-double areaCircle(double radius);
+double lengthCircle(double rad);
+double areaCircle(double rad);
 
 void readSquare(Square &s);
 void writeSquare(const Square &s);
